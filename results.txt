@@ -1,0 +1,132 @@
+----------------------------------------
+RESULTS: Isobaric (Constant Pressure)
+----------------------------------------
+Final Temperature: 23065.99 K
+Final Pressure:    656.00 Pa
+Final Volume:      877.00 m^3
+Work Done (W):     270928.00 J
+Heat Added (Q):    677320.00 J
+Internal Energy Change (dU): 406392.00 J
+----------------------------------------
+
+----------------------------------------
+RESULTS: Isobaric (Constant Pressure)
+----------------------------------------
+Final Temperature: 105.20 K
+Final Pressure:    4.00 Pa
+Final Volume:      656.00 m^3
+Work Done (W):     -20000.00 J
+Heat Added (Q):    -50000.00 J
+Internal Energy Change (dU): -30000.00 J
+----------------------------------------
+
+----------------------------------------
+RESULTS: Isobaric (Constant Pressure)
+----------------------------------------
+Final Temperature: 15344.60 K
+Final Pressure:    675.00 Pa
+Final Volume:      567.00 m^3
+Work Done (W):     -4177575.00 J
+Heat Added (Q):    -10443937.50 J
+Internal Energy Change (dU): -6266362.50 J
+----------------------------------------
+
+----------------------------------------
+RESULTS: Isobaric (Constant Pressure)
+----------------------------------------
+Final Temperature: 40803.86 K
+Final Pressure:    434.00 Pa
+Final Volume:      2345.00 m^3
+Work Done (W):     916174.00 J
+Heat Added (Q):    2290435.00 J
+Internal Energy Change (dU): 1374261.00 J
+----------------------------------------
+
+----------------------------------------
+RESULTS: Isobaric (Constant Pressure)
+----------------------------------------
+Final Temperature: 696.88 K
+Final Pressure:    432.00 Pa
+Final Volume:      456.00 m^3
+Work Done (W):     95904.00 J
+Heat Added (Q):    239760.00 J
+Internal Energy Change (dU): 143856.00 J
+----------------------------------------
+
+----------------------------------------
+RESULTS: Isobaric (Constant Pressure)
+----------------------------------------
+Final Temperature: 1014.57 K
+Final Pressure:    423.00 Pa
+Final Volume:      678.00 m^3
+Work Done (W):     93906.00 J
+Heat Added (Q):    234765.00 J
+Internal Energy Change (dU): 140859.00 J
+----------------------------------------
+
+----------------------------------------
+RESULTS: Isobaric (Constant Pressure)
+----------------------------------------
+Final Temperature: 829.67 K
+Final Pressure:    234.00 Pa
+Final Volume:      678.00 m^3
+Work Done (W):     51948.00 J
+Heat Added (Q):    129870.00 J
+Internal Energy Change (dU): 77922.00 J
+----------------------------------------
+
+----------------------------------------
+RESULTS: Isobaric (Constant Pressure)
+----------------------------------------
+Final Temperature: 1255.15 K
+Final Pressure:    354.00 Pa
+Final Volume:      678.00 m^3
+Work Done (W):     39294.00 J
+Heat Added (Q):    98235.00 J
+Internal Energy Change (dU): 58941.00 J
+----------------------------------------
+
+----------------------------------------
+RESULTS: Isobaric (Constant Pressure)
+----------------------------------------
+Final Temperature: 1272.78 K
+Final Pressure:    456.00 Pa
+Final Volume:      789.00 m^3
+Work Done (W):     50616.00 J
+Heat Added (Q):    126540.00 J
+Internal Energy Change (dU): 75924.00 J
+----------------------------------------
+
+----------------------------------------
+RESULTS: Isochoric (Constant Volume)
+----------------------------------------
+Final Temperature: 890.00 K
+Final Pressure:    64.91 Pa
+Final Volume:      456.00 m^3
+Work Done (W):     0.00 J
+Heat Added (Q):    5038.28 J
+Internal Energy Change (dU): 5038.28 J
+----------------------------------------
+
+----------------------------------------
+RESULTS: Isobaric (Constant Pressure)
+----------------------------------------
+Final Temperature: 1435.71 K
+Final Pressure:    456.00 Pa
+Final Volume:      890.00 m^3
+Work Done (W):     96672.00 J
+Heat Added (Q):    241680.00 J
+Internal Energy Change (dU): 145008.00 J
+----------------------------------------
+
+----------------------------------------
+RESULTS: Isochoric (Constant Volume)
+----------------------------------------
+Final Temperature: 4566.00 K
+Final Pressure:    3731.28 Pa
+Final Volume:      234.00 m^3
+Work Done (W):     0.00 J
+Heat Added (Q):    -631319.43 J
+Internal Energy Change (dU): -631319.43 J
+----------------------------------------
+
