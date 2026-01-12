@@ -94,7 +94,7 @@ int main() {
         cout << "\nPress Enter to return to menu...";
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cin.get();
-        clearScreen();
+    
     }
 
     return 0;
