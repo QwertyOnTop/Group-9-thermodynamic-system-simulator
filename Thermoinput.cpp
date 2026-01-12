@@ -173,11 +173,32 @@ double getValidatedInput(string prompt, double min) {
     }
 }
 
+// Function to print results to a .txt file
 void printResults(const ProcessResult& res) {
-    ofstream file("results.csv", ios::app);  // Open file in append mode
-    file << res.type << "," << res.workDone << "," << res.heatTransfer << "," 
-         << res.deltaInternalEnergy << "," << res.finalTemp << "," 
-         << res.finalPressure << "," << res.finalVolume << endl;
+    // Open the text file in append mode
+    ofstream file("results.txt", ios::app);
+
+    // Check if the file is open successfully
+    if (!file) {
+        cout << "Error opening file!" << endl;
+        return;
+    }
+
+    // Write the results in a human-readable format to the text file
+    file << "----------------------------------------" << endl;
+    file << "RESULTS: " << res.type << endl;
+    file << "----------------------------------------" << endl;
+    file << fixed << setprecision(2);
+    file << "Final Temperature: " << res.finalTemp << " K" << endl;
+    file << "Final Pressure:    " << res.finalPressure << " Pa" << endl;
+    file << "Final Volume:      " << res.finalVolume << " m^3" << endl;
+    file << "Work Done (W):     " << res.workDone << " J" << endl;
+    file << "Heat Added (Q):    " << res.heatTransfer << " J" << endl;
+    file << "Internal Energy Change (dU): " << res.deltaInternalEnergy << " J" << endl;
+    file << "----------------------------------------" << endl;
+    file << endl; // Add an empty line between results
+
+    // Close the file after writing
     file.close();
 
     // Also print to console
