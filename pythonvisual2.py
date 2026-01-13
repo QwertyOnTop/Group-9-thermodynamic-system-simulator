@@ -2,6 +2,10 @@ import tkinter as tk
 from tkinter import filedialog
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
+
+# Test window to verify tkinter is working
+print("Tkinter is loading...")
 
 # Function to read and parse the .txt file
 def parse_results(filename):
@@ -65,7 +69,7 @@ def generate_visualizations(process_types, final_temps, final_pressures, work_do
     plt.ylabel('Heat Transfer (J)')
     plt.title('Work Done vs Heat Transfer')
     plt.grid(True)
-    plt.show()
+    
 
     # Visualization 2: Plot Final Temperature vs Final Pressure
     plt.figure(figsize=(10, 6))
@@ -74,7 +78,7 @@ def generate_visualizations(process_types, final_temps, final_pressures, work_do
     plt.ylabel('Final Pressure (Pa)')
     plt.title('Final Temperature vs Final Pressure')
     plt.grid(True)
-    plt.show()
+   
 
     # Visualization 3: Bar Plot for Process Type Frequency
     plt.figure(figsize=(10, 6))
@@ -84,7 +88,7 @@ def generate_visualizations(process_types, final_temps, final_pressures, work_do
     plt.ylabel('Frequency')
     plt.title('Frequency of Each Process Type')
     plt.xticks(rotation=45, ha='right')
-    plt.show()
+    
 
     # Visualization 4: Histogram of Work Done
     plt.figure(figsize=(10, 6))
@@ -93,13 +97,33 @@ def generate_visualizations(process_types, final_temps, final_pressures, work_do
     plt.ylabel('Frequency')
     plt.title('Histogram of Work Done')
     plt.grid(True)
-    plt.show()
+    
 
     # Visualization 5: Box Plot for Final Pressure
     plt.figure(figsize=(10, 6))
-    sns.boxplot(final_pressures, color='lightcoral')
+    final_pressures = np.array(final_pressures)
+    q1 = np.percentile(final_pressures, 25)
+    q3 = np.percentile(final_pressures, 75)
+    iqr = q3 - q1
+    lower_bound = q1 - 1.5 * iqr
+    upper_bound = q3 + 1.5 * iqr
+
+    # Filter out outliers (optional step)
+    filtered_pressures = final_pressures[(final_pressures >= lower_bound) & (final_pressures <= upper_bound)]
+    
+    sns.boxplot(data=filtered_pressures, color='lightcoral')
     plt.xlabel('Final Pressure (Pa)')
     plt.title('Box Plot of Final Pressure')
+    plt.grid(True)
+
+# **New Heatmap Visualization** - Heatmap of Final Temperature vs Final Pressure
+    plt.figure(figsize=(10, 6))
+    plt.hexbin(final_temps, final_pressures, gridsize=30, cmap='YlGnBu')
+    plt.colorbar(label='Counts in bin')
+    plt.xlabel('Final Temperature (K)')
+    plt.ylabel('Final Pressure (Pa)')
+    plt.title('Heatmap of Final Temperature vs Final Pressure')
+
     plt.show()
 
 # Function to handle the file selection and visualization
@@ -117,14 +141,17 @@ def on_file_select():
 # Create the main window using Tkinter
 window = tk.Tk()
 window.title("Thermodynamic Data Visualizer")
+window.geometry("400x150")
 
 # Add a label to give instructions to the user
 label = tk.Label(window, text="Select the results.txt file to visualize thermodynamic data:")
 label.pack(pady=10)
 
 # Create a button to trigger the file selection and visualization
-btn_generate = tk.Button(window, text="Generate Visualization", command=on_file_select)
+btn_generate = tk.Button(window, text="Generate Graphs", command=on_file_select)
 btn_generate.pack(pady=20)
+
+print("Window created and showing...")
 
 # Run the Tkinter event loop
 window.mainloop()
