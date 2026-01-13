@@ -160,6 +160,10 @@ window.title("Thermodynamic Data Visualizer")
 label = tk.Label(window, text="Select the file type and choose a file to visualize thermodynamic data:")
 label.pack(pady=10)
 
+# Add a label to prompt user to choose between CSV and TXT
+choose_file_label = tk.Label(window, text="Select file type (TXT or CSV):")
+choose_file_label.pack(pady=5)
+
 # Dropdown menu to select file type (TXT or CSV)
 file_type_var = tk.StringVar(window)
 file_type_var.set("TXT")  # Default value
