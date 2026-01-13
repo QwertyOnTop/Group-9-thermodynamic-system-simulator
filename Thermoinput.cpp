@@ -173,16 +173,39 @@ double getValidatedInput(string prompt, double min) {
     }
 }
 
-// Function to print results to a .txt file
+// Function to print results to a .txt file and CSV file
 void printResults(const ProcessResult& res) {
     // Open the text file in append mode
     ofstream file("results.txt", ios::app);
+    
+    // Check if file exists and is empty to determine if we need to write headers
+    ifstream checkFile("results.csv");
+    bool fileEmpty = !checkFile.good() || checkFile.peek() == EOF;
+    checkFile.close();
+    
+    ofstream csvFile("results.csv", ios::app);
 
-    // Check if the file is open successfully
+    // Check if the files are open successfully
     if (!file) {
-        cout << "Error opening file!" << endl;
+        cout << "Error opening text file!" << endl;
         return;
     }
+    if (!csvFile) {
+        cout << "Error opening CSV file!" << endl;
+        return;
+    }
+
+    // Write header to CSV if file is empty (only on first write)
+    if (fileEmpty) {
+        csvFile << "Process Type,Final Temperature,Final Pressure,Final Volume,Work Done (W),Heat Added (Q),Internal Energy Change (dU)" << endl;
+    }
+
+    // Write the results in CSV format
+    csvFile << fixed << setprecision(2);
+    csvFile << res.type << "," << res.finalTemp << "," << res.finalPressure << "," 
+            << res.finalVolume << "," << res.workDone << "," << res.heatTransfer << "," 
+            << res.deltaInternalEnergy << endl;
+    csvFile.close();
 
     // Write the results in a human-readable format to the text file
     file << "----------------------------------------" << endl;
@@ -197,8 +220,6 @@ void printResults(const ProcessResult& res) {
     file << "Internal Energy Change (dU): " << res.deltaInternalEnergy << " J" << endl;
     file << "----------------------------------------" << endl;
     file << endl; // Add an empty line between results
-
-    // Close the file after writing
     file.close();
 
     // Also print to console
